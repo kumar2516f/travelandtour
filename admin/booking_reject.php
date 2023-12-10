@@ -54,49 +54,6 @@ include("a_layout/a_session.php");
 
     <a href="booking_approved.php" class="button">Approved</a>
     <a href="booking_reject.php" class="button">Rejected</a>
-<?php
-// backend code of reject
-if(isset($_POST["reject"]))
-{
-    $bid=$_POST ["booking_id"];
-    echo"$bid";
-  
-        include("a_layout/DB.php");
-        $reject_sql="UPDATE bookings SET status = 'reject' WHERE bookings.bid = '$bid'";
-        $reject_result=mysqli_query($conn,$reject_sql);
-        {
-            echo "
-            <script>
-            alert('Booking Rejected Sucessfully');
-            window.location.href='a_bookings.php';
-            </script>
-            ";
-        }
-}
-
-
-
-// backend code of approved
-if(isset($_POST["approved"]))
-{
-    $bid=$_POST ["booking_id"];
-    echo"$bid";
-  
-        include("a_layout/DB.php");
-        $reject_sql="UPDATE bookings SET status = 'approved' WHERE bookings.bid = '$bid'";
-        $reject_result=mysqli_query($conn,$reject_sql);
-        {
-            echo "
-            <script>
-            alert('Booking Booked Sucessfully');
-            window.location.href='a_bookings.php';
-            </script>
-            ";
-        }
-}
-
-
-?>
 
 
 
@@ -115,7 +72,7 @@ if(isset($_POST["approved"]))
         <th width="10%">Booking Date</th>
         <th width="5%">No. of People</th>
         <th width="5%">Status</th>
-        <th width="5%">Action</th>
+       
     </tr>
         <?php
         include("a_layout/DB.php");
@@ -125,7 +82,8 @@ if(isset($_POST["approved"]))
                 FROM bookings b
                 INNER JOIN user u ON u.uid = b.uid
                 INNER JOIN package p ON p.pid = b.pid
-                where b.status='pending'
+                where b.status='reject'
+                ORDER BY b.b_date DESC
                 ";
 
         $result = $conn->query($sqll);
@@ -166,18 +124,7 @@ if(isset($_POST["approved"]))
                         <td>$b_date</td>
                         <td>$no_people</td>
                         <td>$status</td>
-                        <td>
-                        <form action='a_bookings.php' method='post'>
-                        <input type='hidden' name='booking_id' id='' value='$bid'>
-                        <input type='submit' name='reject' id='' value='reject'>
-                        </form>
-
-                        <form action='a_bookings.php' method='post'>
-                        <input type='hidden' name='booking_id' id='' value='$bid'>
-                        <input type='submit' name='approved' id='' value='approved'>
-                        </form>
-                       
-                        </td>
+                        
                     </tr>
                 ";
 

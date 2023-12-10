@@ -54,6 +54,21 @@
        
         $pid=$_POST['pid'];
         $date=$_POST['date'];
+
+        $selectedTimestamp = strtotime($date);
+        // Get the current timestamp in Kathmandu timezone
+        $currentTimestamp = time();
+        
+        // Compare the selected date's timestamp with the current timestamp
+        if ($selectedTimestamp < $currentTimestamp) {
+            echo "
+            <script>
+            alert('invalid date. Date should be more than today');
+            window.location.href='user_package.php';
+            </script>";
+            die();
+        } 
+
     $sql="INSERT INTO `bookings` (`bid`, `uid`, `pid`, `b_date`, `status`) VALUES (NULL, ' $uid', '$pid', '$date', 'pending')";
     $result = $conn->query($sql);
     if($result)
@@ -105,6 +120,7 @@ if (isset($_POST["buypackagebtn"])) {
         <input type="number" name="people" min="0" id="people" value="<?php echo $no_people;?>" readonly>
         <label for="date">Pick a date</label>
         <input type="date" name="date" id="date" value="" required>
+
 
 
         <input type="hidden" name="pid" value="<?php echo $pid ;?>" id="">

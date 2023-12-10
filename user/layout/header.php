@@ -52,8 +52,8 @@
 
     <nav>
         <a href="index.php">Home</a>
-        <a href="about.php">About</a>
         <a href="user_package.php">Packages</a>
-        <a href="contact.php">Contact</a>
+        <a href="bookings.php">Bookings</a>
+        <a href="about.php">About</a>
         <a href="logout.php">Logout</a>
     </nav>
