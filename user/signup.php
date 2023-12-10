@@ -86,14 +86,7 @@
             </script>";
         }
 
-        // Validate and sanitize email
-        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-            echo "<script>
-            alert('Enter a valid email address');
-            window.location.href='signup.php';
-            </script>";
-        }
+      
 
         // Check for duplicate email in the database
         $check_duplicate = "SELECT email FROM user WHERE email = '$email'";
