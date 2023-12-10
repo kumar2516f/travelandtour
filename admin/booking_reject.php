@@ -4,7 +4,7 @@ include("a_layout/a_session.php");
 ?>
 
 <div class="main">
-<style>
+    <style>
         table {
             width: 100%;
             border-collapse: collapse;
@@ -58,22 +58,27 @@ include("a_layout/a_session.php");
 
 
 
-<table>
-    <tr>
-        <th width="5%">SN</th>
-        <th width="10%">Name</th>
-        <th width="10%">Email</th>
-        <th width="10%">Phone</th>
-        <th width="15%">Package Name</th>
-        <th width="15%">Start Destination</th>
-        <th width="15%">Final Destination</th>
-        <th width="5%">Days</th>
-        <th width="5%">Price</th>
-        <th width="10%">Booking Date</th>
-        <th width="5%">No. of People</th>
-        <th width="5%">Status</th>
-       
-    </tr>
+    <table>
+        <tr>
+            <th colspan="12" style="text-align:center; font-size:30px">
+                Rejected Booking
+            </th>
+        </tr>
+        <tr>
+            <th width="5%">SN</th>
+            <th width="10%">Name</th>
+            <th width="10%">Email</th>
+            <th width="10%">Phone</th>
+            <th width="15%">Package Name</th>
+            <th width="15%">Start Destination</th>
+            <th width="15%">Final Destination</th>
+            <th width="5%">Days</th>
+            <th width="5%">Price</th>
+            <th width="10%">Booking Date</th>
+            <th width="5%">No. of People</th>
+            <th width="5%">Status</th>
+
+        </tr>
         <?php
         include("a_layout/DB.php");
         $sqll = "SELECT u.uid, u.uname, u.uphone, u.email, 
@@ -98,7 +103,7 @@ include("a_layout/a_session.php");
                 $uname = $row["uname"];
                 $uphone = $row["uphone"];
                 $email = $row["email"];
-                
+
                 $b_date = $row["b_date"];
                 $status = $row["status"];
 
@@ -138,4 +143,3 @@ include("a_layout/a_session.php");
 <?php
 include("a_layout/a_footer.php");
 ?>
-

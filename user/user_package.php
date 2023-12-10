@@ -19,8 +19,8 @@
     }
 
     .card img {
-      width: 100%;
-      height: auto;
+      width: 300px;
+      height: 200px;
     }
 
     .card-content {
@@ -34,6 +34,7 @@
     p {
       color: #666;
     }
+    
   </style>
 
       <div class="main">

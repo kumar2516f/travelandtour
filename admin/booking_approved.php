@@ -60,6 +60,11 @@ include("a_layout/a_session.php");
 
 
     <table>
+    <tr>
+            <th colspan="12" style="text-align:center; font-size:30px">
+                Approved Booking
+            </th>
+        </tr>
         <tr>
             <th width="5%">SN</th>
             <th width="10%">Name</th>

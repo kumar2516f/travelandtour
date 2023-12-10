@@ -43,7 +43,7 @@
     <th width="30%">user Name</th>
     <th width="15%"> user phone</th>
     <th width="30%">email</th>
-    <th width="15%">action</th>
+ 
   </tr>
       <?php
   include("a_layout/DB.php");
@@ -51,7 +51,7 @@
   $result=$conn->query($sql);
   if($result->num_rows > 0)
   {
-    // $i=0;
+    $i=1;
     while($row=$result->fetch_assoc()){
    
       $uid=$row['uid'];
@@ -61,14 +61,15 @@
       
         echo"
         <tr>
-        <td></td>
+        <td>$i</td>
         <td>$uname</td>
         <td>$uphone</td>
         <td>$email</td>
-        <td> </td>
+    
       </tr>
         
         ";
+        $i++;
     }
   }
   ?>

@@ -19,7 +19,8 @@ if (isset($_POST["edit_package"])) {
         $filePath = $uploadDir . $uniqueName;
 
         if (move_uploaded_file($tmpName, $filePath)) {
-            $sql = "UPDATE package SET pname='$pname', p_start_destination='$start_p', p_end_destination='$end_p', days='$days', p_price='$price', p_image='$uniqueName', no_people='$no_people' WHERE pid='$pid'";
+            $sql = "UPDATE package SET pname='$pname', p_start_destination='$start_p', p_end_destination='$end_p', 
+            days='$days', p_price='$price', p_image='$uniqueName', no_people='$no_people' WHERE pid='$pid'";
             $result = $conn->query($sql);
 
             if ($result) {
@@ -40,7 +41,8 @@ if (isset($_POST["edit_package"])) {
             </script>";
         }
     } else {
-        $sql = "UPDATE package SET pname='$pname', p_start_destination='$start_p', p_end_destination='$end_p', days='$days', p_price='$price', no_people='$no_people' WHERE pid='$pid'";
+        $sql = "UPDATE package SET pname='$pname', p_start_destination='$start_p', p_end_destination='$end_p',
+         days='$days', p_price='$price', no_people='$no_people' WHERE pid='$pid'";
         $result = $conn->query($sql);
 
         if ($result) {
@@ -129,27 +131,27 @@ include("a_layout/a_session.php");
 
 <div class="main">
     <form action="edit_package.php" class="add_package" method="post" enctype="multipart/form-data">
-        
+
         <label for="package_name">Package Name:</label>
-        <input type="text" id="package_name" name="package_name" value="<?php echo $pname;?>" required>
+        <input type="text" id="package_name" name="package_name" value="<?php echo $pname; ?>" required>
 
         <label for="start_p">start destination:</label>
-        <input type="text" id="start_p" name="start_p" value="<?php echo $p_start_destination;?>" required>
+        <input type="text" id="start_p" name="start_p" value="<?php echo $p_start_destination; ?>" required>
         <label for="end_p">final destination</label>
-        <input type="text" name="end_p" id="end_p" value="<?php echo $p_end_destination;?>" required>
+        <input type="text" name="end_p" id="end_p" value="<?php echo $p_end_destination; ?>" required>
 
         <label for="price">Price</label>
-        <input type="number" name="price" min="0" id="price" value="<?php echo $p_price;?>" required>
+        <input type="number" name="price" min="0" id="price" value="<?php echo $p_price; ?>" required>
 
         <label for="days">Days</label>
-        <input type="number" name="days" min="0" id="days" value="<?php echo $days;?>" required>
+        <input type="number" name="days" min="0" id="days" value="<?php echo $days; ?>" required>
         <label for="people">no of_people</label>
-        <input type="number" name="people" min="0" id="people" value="<?php echo $no_people;?>" required>
+        <input type="number" name="people" min="0" id="people" value="<?php echo $no_people; ?>" required>
 
         <label for="image">Image</label>
         <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg">
 
-        <input type="hidden" name="pid" value="<?php echo $pid ;?>" id="">
+        <input type="hidden" name="pid" value="<?php echo $pid; ?>" id="">
 
         <input type="submit" name="edit_package" value="edit">
     </form>

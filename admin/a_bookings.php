@@ -102,6 +102,11 @@ if(isset($_POST["approved"]))
 
 
 <table>
+<tr>
+            <th colspan="13" style="text-align:center; font-size:30px">
+                Pending Booking
+            </th>
+        </tr>
     <tr>
         <th width="5%">SN</th>
         <th width="10%">Name</th>

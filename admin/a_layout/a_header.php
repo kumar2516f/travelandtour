@@ -54,7 +54,6 @@
         <a href="dashboard.php">Home</a>
        
         <a href="package.php">Package</a>
-        <a href="user_list.php">user list</a>
-        <a href="#">Contact</a>
         <a href="a_bookings.php">Bookings</a>
+        <a href="user_list.php">user list</a>
     </nav>
