@@ -80,7 +80,7 @@ $sql = "DELETE FROM package WHERE pid='$pid'";
   $result=$conn->query($sql);
   if($result->num_rows > 0)
   {
-    // $i=0;
+    $i=1;
     while($row=$result->fetch_assoc()){
    
       $pid=$row['pid'];
@@ -93,7 +93,7 @@ $sql = "DELETE FROM package WHERE pid='$pid'";
       $no_people=$row['no_people'];
         echo"
         <tr>
-        <td></td>
+        <td>$i</td> 
         <td>$pname</td>
         <td>$p_start_destination</td>
         <td>$p_end_destination</td>
@@ -116,6 +116,7 @@ $sql = "DELETE FROM package WHERE pid='$pid'";
       </tr>
         
         ";
+        $i++;
     }
   }
   ?>

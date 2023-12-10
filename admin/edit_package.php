@@ -141,12 +141,12 @@ include("a_layout/a_session.php");
         <input type="text" name="end_p" id="end_p" value="<?php echo $p_end_destination; ?>" required>
 
         <label for="price">Price</label>
-        <input type="number" name="price" min="0" id="price" value="<?php echo $p_price; ?>" required>
+        <input type="number" name="price" min="1" id="price" value="<?php echo $p_price; ?>" required>
 
         <label for="days">Days</label>
-        <input type="number" name="days" min="0" id="days" value="<?php echo $days; ?>" required>
+        <input type="number" name="days" min="1" id="days" value="<?php echo $days; ?>" required>
         <label for="people">no of_people</label>
-        <input type="number" name="people" min="0" id="people" value="<?php echo $no_people; ?>" required>
+        <input type="number" name="people" min="1" id="people" value="<?php echo $no_people; ?>" required>
 
         <label for="image">Image</label>
         <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg">

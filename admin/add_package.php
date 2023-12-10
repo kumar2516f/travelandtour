@@ -101,12 +101,12 @@
         <input type="text" name="end_p" id="end_p" required>
 
         <label for="price">Price</label>
-        <input type="number" name="price" min="0" id="price" required>
+        <input type="number" name="price" min="1" id="price" required>
 
         <label for="days">Days</label>
-        <input type="number" name="days" min="0" id="days" required>
+        <input type="number" name="days" min="1" id="days" required>
         <label for="people">people</label>
-        <input type="number" name="people" min="0" id="people" required>
+        <input type="number" name="people" min="1" id="people" required>
 
         <label for="image">Image</label>
         <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg" required>
