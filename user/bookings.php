@@ -28,8 +28,29 @@ include("layout/user_session.php");
         }
 
        
-        }
+        
     </style>
+
+<?php
+if(isset($_POST["cancel"])){
+    $bid = $_POST['bid'];
+    include('layout/DB.php');
+    $sql = "DELETE FROM bookings WHERE bid='$bid'";
+    $r = $conn->query($sql);
+    if($r){
+        echo "<script>
+        alert('Booking canceled and deleted from the database');
+        window.location.href='bookings.php';
+        </script>";
+    } else {
+        echo "<script>
+        alert('Failed to cancel booking');
+        window.location.href='bookings.php';
+        </script>"; 
+    }
+}
+?>
+
 
     <table>
         <tr>
@@ -45,6 +66,7 @@ include("layout/user_session.php");
             <th width="10%">Booking Date</th>
             <th width="5%">No. of People</th>
             <th width="5%">Status</th>
+            <th width="5%">action</th>
 
         </tr>
         <?php
@@ -61,7 +83,11 @@ include("layout/user_session.php");
 
         $result = $conn->query($sqll);
         if ($result) {
-            $i = 1; // Initialize the serial number
+            $i = 1; 
+        
+            
+            
+            // Initialize the serial number
             while ($row = $result->fetch_assoc()) {
                 // Fetching data from the query result
                
@@ -82,6 +108,11 @@ include("layout/user_session.php");
                 $days = $row["days"];
                 $p_price = $row["p_price"];
 
+
+                if($status=='pending'){
+
+                
+
                 // Outputting table rows with fetched data
                 echo "
                     <tr>
@@ -97,9 +128,39 @@ include("layout/user_session.php");
                         <td>$b_date</td>
                         <td>$no_people</td>
                         <td>$status</td>
+                        <td>
+                        <form action='bookings.php' method='POST'>
+                        <input type='hidden' name='bid' value='$bid'>
+                        <input type='submit' name='cancel' value='Cancel'>
+                    </form>
+                    
+                        
+                        </td>
                         
                     </tr>
                 ";
+                }
+                else{
+                    echo "
+                    <tr>
+                        <td>$i</td>
+                        <td>$uname</td>
+                        <td>$email</td>
+                        <td>$uphone</td>
+                        <td>$pname</td>
+                        <td>$p_start_destination</td>
+                        <td>$p_end_destination</td>
+                        <td>$days</td>
+                        <td>$p_price</td>
+                        <td>$b_date</td>
+                        <td>$no_people</td>
+                        <td>$status</td>
+                        <td>
+                      completed
+                        </td>                        
+                    </tr>
+                ";
+                }
 
                 $i++; // Increment the serial number
             }

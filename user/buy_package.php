@@ -74,7 +74,14 @@
     if($result)
     {
         echo "<script>
-        alert('package booked adnd waing for adimin to verify');
+        alert('package booked and waiting for adimin to verify');
+        window.location.href='bookings.php';
+        </script>";
+    }
+    else{
+
+        echo "<script>
+        alert('booking failed');
         window.location.href='user_package.php';
         </script>";
     }

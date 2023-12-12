@@ -105,7 +105,7 @@
 
         <label for="days">Days</label>
         <input type="number" name="days" min="1" id="days" required>
-        <label for="people">people</label>
+        <label for="people">people capacity(vechile) </label>
         <input type="number" name="people" min="1" id="people" required>
 
         <label for="image">Image</label>

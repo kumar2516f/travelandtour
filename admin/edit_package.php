@@ -145,7 +145,7 @@ include("a_layout/a_session.php");
 
         <label for="days">Days</label>
         <input type="number" name="days" min="1" id="days" value="<?php echo $days; ?>" required>
-        <label for="people">no of_people</label>
+        <label for="people">people capacity(vechile) </label>
         <input type="number" name="people" min="1" id="people" value="<?php echo $no_people; ?>" required>
 
         <label for="image">Image</label>

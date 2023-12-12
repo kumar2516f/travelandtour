@@ -69,7 +69,7 @@
           Price=$p_price<br>
           Destination=$p_start_destination<br>
           Destination=$p_end_destination<br>
-          No of people=$no_people <br>
+          No of people(capacity in vechile)  =$no_people <br>
           <form method='post' action='buy_package.php'>
         <input type='hidden' name='pid' value='$pid' >
         <input type='submit' name='buypackagebtn' id=' ' value='buy package'>
