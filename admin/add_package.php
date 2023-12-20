@@ -91,7 +91,7 @@
 
 <div class="main">
     <form action="add_package.php" class="add_package" method="post" enctype="multipart/form-data">
-        <h2>Admin Login</h2>
+        <h2>Package</h2>
         <label for="package_name">Package Name:</label>
         <input type="text" id="package_name" name="package_name" required>
 
